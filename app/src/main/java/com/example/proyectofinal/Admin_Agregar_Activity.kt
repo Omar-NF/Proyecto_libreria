@@ -25,12 +25,12 @@ class Admin_Agregar_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_admin_agregar)
 
         nombreLibros = findViewById(R.id.edtNombre)
-        cantidadLibros = findViewById(R.id.spCantidad)
-        precio_Libros = findViewById(R.id)
-        grupo = findViewById(R.id)
-        renta = findViewById(R.id)
-        venta = findViewById(R.id)
-        ambos = findViewById(R.id)
+        cantidadLibros = findViewById(R.id.)
+        precio_Libros = findViewById(R.id.)
+        grupo = findViewById(R.id.)
+        renta = findViewById(R.id.)
+        venta = findViewById(R.id.)
+        ambos = findViewById(R.id.)
         guardar = findViewById(R.id.btnGuardarLib)
         borrar = findViewById(R.id.btnBorrarLib)
     }
