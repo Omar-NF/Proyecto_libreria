@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/edtNombre"
         style="@style/CustomEditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spSpinner"
         style="@style/CustomSpinnerStyle"
         android:layout_width="287dp"
         android:layout_height="52dp"
@@ -61,10 +61,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/edtPrecio"
         style="@style/CustomEditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,10 +77,10 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spSpinner" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/rdGrupo"
         android:layout_width="368dp"
         android:layout_height="61dp"
         android:layout_marginStart="37dp"
@@ -89,24 +89,24 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber">
+        app:layout_constraintTop_toBottomOf="@+id/edtPrecio">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rdRenta"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
             android:text="@string/renta"
             android:textSize="24sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rdVenta"
             android:layout_width="119dp"
             android:layout_height="wrap_content"
             android:text="@string/venta"
             android:textSize="24sp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rdAmbos"
             android:layout_width="127dp"
             android:layout_height="wrap_content"
             android:text="@string/ambos"
@@ -124,7 +124,7 @@
         android:text="@string/guardar"
         app:layout_constraintEnd_toStartOf="@+id/btnBorrarLib"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/rdGrupo" />
 
     <Button
         android:id="@+id/btnBorrarLib"
@@ -136,6 +136,6 @@
         android:onClick="regresarAdmin"
         android:text="@string/regresar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/rdGrupo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
