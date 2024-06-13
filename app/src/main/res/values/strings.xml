@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Proyecto Final</string>
+
+    <string name="usser">Usuarios</string>
+    <string name="pass">Contraseña</string>
+    <string name="inicio">Inicia sesion</string>
+    <string name="iniciar">Iniciar sesion</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <!-- Administrador -->
+    <string name="hola">Bienvenido!!</string>
+    <string name="texto">Agrega o borra algun libro de tu lista</string>
+
+    <string name="agregarTitulo">Añade un libro</string>
+    <string name="nomLibro">Nombre del libro</string>
+    <string name="cantLibro">Cantidad de libros</string>
+    <string name="prestLibro">Precio</string>
+    <string name="disptLibro">Disponibilidad</string>
+    <string name="renta">Renta  </string>
+    <string name="venta">Venta </string>
+    <string name="ambos">Ambos </string>
+    <string name="guardar">Guardar </string>
+    <string name="regresar">Regresar </string>
+
+    <string name="tituloBorrar">¿Que libro deseas borrar? </string>
+    <string name="eliminar">Eliminar</string>
+    <!-- Empleado -->
+
+    <!-- Cliente -->
+    <string name="titulo">Libreria virtual</string>
+    <string name="descripcion">Bienvenido!!! Busca un libro desde nuestra aplicacion
+        y ven a nuestra libreria a disfruta de tu libro favorito. </string>
+
+    <string name="tituloLLenar">Llena el siguiente formulario</string>
+    <string name="sig">Siguiente</string>
+    <string name="comp">Comprar</string>
+
+    <string name="tiuloInfoLib">Detalles del libro</string>
+    <string name="tiuloInfoComp">Detalles de la compra o renta</string>
+    <string name="tiuloRec">Lee alguno de nuestros libros</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Buscar libro</string>
+    <string name="menu_slideshow">Comprar o rentar libros</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

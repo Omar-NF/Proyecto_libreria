@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.slideshow.SlideshowFragment">
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/CustomTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tituloLLenar"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        style="@style/CustomEditTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/nomLibro"
+        android:inputType="text"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        style="@style/CustomEditTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/prestLibro"
+        android:inputType="number"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/venta"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/renta"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="228dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/CustomButtonStyle"
+        android:layout_width="178dp"
+        android:layout_height="52dp"
+        android:text="@string/sig"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="403dp" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/CustomButtonStyle"
+        android:layout_width="174dp"
+        android:layout_height="54dp"
+        android:text="@string/regresar"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="474dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ProyectoFinal" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Primary color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- Primary dark color. -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- Accent color. -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Customize your theme here. -->
+        <!-- Color de los íconos del Toolbar -->
+        <item name="colorControlNormal">#000000</item> <!-- Negro -->
+    </style>
+
+    <style name="Theme.ProyectoFinal" parent="Base.Theme.ProyectoFinal" />
+
+    <style name="Theme.ProyectoFinal.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.ProyectoFinal.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ProyectoFinal.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Estilo personalizado para la Toolbar -->
+    <style name="CustomToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextColor">#000000</item> <!-- Color del texto de la Toolbar -->
+    </style>
+    <!-- Estilo personalizado para el spinner -->
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/estilos_spinner</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:popupBackground">#FFFFFF</item> <!-- Fondo del dropdown -->
+        <item name="android:dropDownWidth">match_parent</item> <!-- Ancho del dropdown -->
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>

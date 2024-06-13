@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00f7ff</color> <!-- Reemplaza con tu color deseado -->
+    <color name="colorPrimaryDark">#FF000000</color>
+    <color name="colorAccent">#FF000000</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FF000000</color>
+</resources>
