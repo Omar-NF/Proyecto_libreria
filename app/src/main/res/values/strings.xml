@@ -18,7 +18,7 @@
 
     <string name="agregarTitulo">Añade un libro</string>
     <string name="nomLibro">Nombre del libro</string>
-    <string name="cantLibro">Cantidad de libros</string>
+    <string name="cantLibro">Genero</string>
     <string name="prestLibro">Precio</string>
     <string name="disptLibro">Disponibilidad</string>
     <string name="renta">Renta  </string>
@@ -29,6 +29,16 @@
 
     <string name="tituloBorrar">¿Que libro deseas borrar? </string>
     <string name="eliminar">Eliminar</string>
+
+    <string-array name="stArrayGeneros">
+        <item>Accion</item>
+        <item>Ciencia ficcion</item>
+        <item>Terror</item>
+        <item>Romance</item>
+        <item>Misterio</item>
+        <item>Infantiles</item>
+        <item>Auto ayuda</item>
+    </string-array>
     <!-- Empleado -->
 
     <!-- Cliente -->

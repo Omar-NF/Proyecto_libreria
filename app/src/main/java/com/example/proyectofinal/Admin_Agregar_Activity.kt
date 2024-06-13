@@ -4,15 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
+import android.widget.Toast
 
 class Admin_Agregar_Activity : AppCompatActivity() {
     private lateinit var nombreLibros : EditText
-    private lateinit var cantidadLibros : Spinner
+    private lateinit var genero_Libros : Spinner
     private lateinit var precio_Libros : EditText
     private lateinit var grupo : RadioGroup
     private lateinit var renta : RadioButton
@@ -20,22 +23,64 @@ class Admin_Agregar_Activity : AppCompatActivity() {
     private lateinit var ambos : RadioButton
     private lateinit var guardar : Button
     private lateinit var borrar : Button
+    private var opcionSel = "1"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_agregar)
 
         nombreLibros = findViewById(R.id.edtNombre)
-        cantidadLibros = findViewById(R.id.)
-        precio_Libros = findViewById(R.id.)
-        grupo = findViewById(R.id.)
-        renta = findViewById(R.id.)
-        venta = findViewById(R.id.)
-        ambos = findViewById(R.id.)
+        genero_Libros = findViewById(R.id.spSpinner)
+        precio_Libros = findViewById(R.id.edtPrecio)
+        grupo = findViewById(R.id.rdGrupo)
+        renta = findViewById(R.id.rdRenta)
+        venta = findViewById(R.id.rdVenta)
+        ambos = findViewById(R.id.rdAmbos)
         guardar = findViewById(R.id.btnGuardarLib)
         borrar = findViewById(R.id.btnBorrarLib)
-    }
+
+        //---------------------------------- Spinner------------------------------------------
+        val lstGeneros = resources.getStringArray(R.array.stArrayGeneros)
+        val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, lstGeneros)
+        //asosiacion
+        genero_Libros.adapter = adaptador
+        //Oidor de eventos
+        genero_Libros.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                opcionSel = lstGeneros [position]
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        }//oidor
+    }//onCreate
 
     fun guardarLibro(view: View){
+        if (nombreLibros.text.isNotBlank() && nombreLibros.text.isNotEmpty()
+            && precio_Libros.text.isNotBlank() && precio_Libros.text.isNotEmpty()){
+            val nombre = nombreLibros.text.toString()
+            val genero = opcionSel
+            val precio = precio_Libros.text.toString().toInt()
+            var disponibilidad : String = ""
+            if (renta.isChecked) { disponibilidad = "Renta" }
+            if (venta.isChecked) { disponibilidad = "Venta" }
+            if (ambos.isChecked) { disponibilidad = "Ambos" }
+
+            limpiar()
+        }else{
+            Toast.makeText(this,"Llena todos los campos", Toast.LENGTH_LONG).show()
+        }
+    }//fun guardar
+
+    private fun limpiar() {
+        nombreLibros.text = null
+        precio_Libros.text = null
+        grupo.clearCheck()
     }
 
     fun regresarAdmin(view: View){
