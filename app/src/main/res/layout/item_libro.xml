@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/nombreTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Libro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nombre del Libro" />
+
+    <TextView
+        android:id="@+id/generoTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Género"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreTextView"
+        tools:text="Género" />
+
+    <TextView
+        android:id="@+id/precioTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Precio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/generoTextView"
+        tools:text="Precio" />
+
+    <TextView
+        android:id="@+id/disponibilidadTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Disponibilidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/precioTextView"
+        tools:text="Disponibilidad" />
+</androidx.constraintlayout.widget.ConstraintLayout>
