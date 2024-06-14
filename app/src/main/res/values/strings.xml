@@ -5,6 +5,7 @@
     <string name="pass">Contraseña</string>
     <string name="inicio">Inicia sesion</string>
     <string name="iniciar">Iniciar sesion</string>
+    <string name="registrar">Registrate aqui</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -26,6 +27,7 @@
     <string name="ambos">Ambos </string>
     <string name="guardar">Guardar </string>
     <string name="regresar">Regresar </string>
+    <string name="editar">Editar </string>
     <string name="listaTitulo">Lista de libros </string>
 
     <string name="tituloBorrar">¿Que libro deseas borrar? </string>
@@ -47,7 +49,7 @@
     <string name="descripcion">Bienvenido!!! Busca un libro desde nuestra aplicacion
         y ven a nuestra libreria a disfruta de tu libro favorito. </string>
 
-    <string name="tituloLLenar">Busca alguno de nuestros libros</string>
+    <string name="tituloLLenar">¿Que libro quieres rentar?</string>
     <string name="sig">Siguiente</string>
     <string name="bus">Buscar</string>
     <string name="comp">Comprar</string>
@@ -58,7 +60,7 @@
 
     <string name="menu_home">Inicio</string>
     <string name="menu_gallery">Buscar libro</string>
-    <string name="menu_slideshow">Comprar o rentar libros</string>
+    <string name="menu_slideshow">Renta un libro</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

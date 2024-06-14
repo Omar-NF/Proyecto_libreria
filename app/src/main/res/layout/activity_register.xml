@@ -8,46 +8,72 @@
 
     <EditText
         android:id="@+id/edtUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:hint="Usuario"
+        style="@style/CustomEditTextStyle"
+        android:layout_width="182dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="115dp"
+        android:hint="@string/usser"
         android:textAlignment="center"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
         android:id="@+id/edtPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Contraseña"
+        style="@style/CustomEditTextStyle"
+        android:layout_width="166dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="123dp"
+        android:hint="@string/pass"
         android:inputType="textPassword"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/edtUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUsuario" />
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        style="@style/CustomButtonStyle"
+        android:layout_width="179dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="116dp"
+        android:onClick="btnRegistrar"
         android:text="Registrar"
-        app:layout_constraintTop_toBottomOf="@+id/edtPass"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="btnRegistrar" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPass" />
 
     <Button
         android:id="@+id/btnVolver"
+        style="@style/CustomButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="131dp"
+        android:onClick="btnVolver"
+        android:text="Volver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrar" />
+
+    <TextView
+        android:id="@+id/textView13"
+        style="@style/CustomTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Volver"
-        app:layout_constraintTop_toBottomOf="@+id/btnRegistrar"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="100dp"
+        android:text="@string/registrar"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="btnVolver" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

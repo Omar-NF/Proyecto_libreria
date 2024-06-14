@@ -15,6 +15,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.util.UUID
 
 class Admin_Agregar_Activity : AppCompatActivity() {
     private lateinit var nombreLibros : EditText
@@ -65,25 +66,47 @@ class Admin_Agregar_Activity : AppCompatActivity() {
         }//oidor
     }//onCreate
 
-    fun guardarLibro(view: View){
-        if (nombreLibros.text.isNotBlank() && nombreLibros.text.isNotEmpty()
-            && precio_Libros.text.isNotBlank() && precio_Libros.text.isNotEmpty()){
+    fun guardarLibro(view: View) {
+        if (nombreLibros.text.isNotBlank() && nombreLibros.text.isNotEmpty() &&
+            precio_Libros.text.isNotBlank() && precio_Libros.text.isNotEmpty()) {
+
             val nombre = nombreLibros.text.toString()
             val genero = opcionSel
             val precio = precio_Libros.text.toString().toInt()
-            var disponibilidad : String = ""
-            if (renta.isChecked) { disponibilidad = "Renta" }
-            if (venta.isChecked) { disponibilidad = "Venta" }
-            if (ambos.isChecked) { disponibilidad = "Ambos" }
+            var disponibilidad = ""
+            if (renta.isChecked) disponibilidad = "Renta"
+            if (venta.isChecked) disponibilidad = "Venta"
+            if (ambos.isChecked) disponibilidad = "Venta y renta"
 
-            val libro = Libro(nombre, genero, precio, disponibilidad)
-            guardarShared(libro)
+            val sharedPreferences = getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
+            val json = sharedPreferences.getString("libros", null)
+            val type = object : TypeToken<MutableList<Libro>>() {}.type
+            val libros: MutableList<Libro> = if (json != null) {
+                gson.fromJson(json, type)
+            } else {
+                mutableListOf()
+            }
 
+            val libroExistente = libros.find { it.nombre == nombre }
+            if (libroExistente != null) {
+                // Actualizamos el libro existente
+                libroExistente.genero = genero
+                libroExistente.precio = precio
+                libroExistente.disponibilidad = disponibilidad
+            } else {
+                // Creamos un nuevo libro
+                val libro = Libro(UUID.randomUUID().toString(), nombre, genero, precio, disponibilidad)
+                libros.add(libro)
+            }
+
+            val jsonString = gson.toJson(libros)
+            sharedPreferences.edit().putString("libros", jsonString).apply()
             limpiar()
-        }else{
-            Toast.makeText(this,"Llena todos los campos", Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this, "Llena todos los campos", Toast.LENGTH_LONG).show()
         }
-    }//fun guardar
+    }
+
 
     fun guardarShared(libro: Libro){
         // 1. Obtener una instancia de SharedPreferences
@@ -119,4 +142,38 @@ class Admin_Agregar_Activity : AppCompatActivity() {
         val intent = Intent(this,AdminActivity::class.java)
         startActivity(intent)
     }
+
+    fun buscarLibro(view: View) {
+        val nombre = nombreLibros.text.toString()
+        if (nombre.isNotBlank() && nombre.isNotEmpty()) {
+            val sharedPreferences = getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
+            val json = sharedPreferences.getString("libros", null)
+            val type = object : TypeToken<MutableList<Libro>>() {}.type
+            val libros: MutableList<Libro> = if (json != null) {
+                gson.fromJson(json, type)
+            } else {
+                mutableListOf()
+            }
+
+            val libro = libros.find { it.nombre == nombre }
+            if (libro != null) {
+                // Llenar los campos de edición con los datos del libro
+                nombreLibros.setText(libro.nombre)
+                precio_Libros.setText(libro.precio.toString())
+                when (libro.disponibilidad) {
+                    "Renta" -> renta.isChecked = true
+                    "Venta" -> venta.isChecked = true
+                    "Venta y renta" -> ambos.isChecked = true
+                }
+                genero_Libros.setSelection((genero_Libros.adapter as ArrayAdapter<String>).getPosition(libro.genero))
+            } else {
+                Toast.makeText(this, "Libro no encontrado", Toast.LENGTH_LONG).show()
+            }
+        } else {
+            Toast.makeText(this, "Ingresa el nombre del libro", Toast.LENGTH_LONG).show()
+        }
+    }
+
+
+
 }
