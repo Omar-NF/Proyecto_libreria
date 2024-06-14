@@ -86,21 +86,26 @@ class Admin_Agregar_Activity : AppCompatActivity() {
     }//fun guardar
 
     fun guardarShared(libro: Libro){
+        // 1. Obtener una instancia de SharedPreferences
         val sharedPreferences = getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
+        // 2. Crear un editor para modificar SharedPreferences
         val editor = sharedPreferences.edit()
-        // Recuperar la lista actual de libros
-        val json = sharedPreferences.getString("libros",null)
+        // 3. Recuperar la lista actual de libros en formato JSON
+        val json = sharedPreferences.getString("libros", null)
+        // 4. Definir el tipo de la lista de libros
         val type = object : TypeToken<MutableList<Libro>>() {}.type
-        val libros : MutableList<Libro> = if (json != null){
+        // 5. Deserializar el JSON a una lista mutable de objetos Libro si existe, o crear una lista vacía si no
+        val libros: MutableList<Libro> = if (json != null) {
             gson.fromJson(json, type)
-        }else{
+        } else {
             mutableListOf()
         }
-        //Agregar un nuevo libro
+        // 6. Agregar el nuevo libro a la lista
         libros.add(libro)
-        //Guardar la lista actualizada de libros
+        // 7. Serializar la lista actualizada de libros a formato JSON
         val jsonString = gson.toJson(libros)
-        editor.putString("libros",jsonString)
+        // 8. Guardar la lista actualizada de libros en SharedPreferences
+        editor.putString("libros", jsonString)
         editor.apply()
     }
 
