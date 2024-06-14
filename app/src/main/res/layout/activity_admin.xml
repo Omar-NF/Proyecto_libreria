@@ -61,15 +61,26 @@
 
     <ImageButton
         android:id="@+id/imgListaLibros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="130dp"
+        android:layout_width="138dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="35dp"
         android:onClick="btnlista"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgSalir"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgAgregar"
         app:srcCompat="@drawable/lista" />
+
+    <ImageButton
+        android:id="@+id/imgSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="40dp"
+        android:onClick="btnsalir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBorrar"
+        app:srcCompat="@drawable/logout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

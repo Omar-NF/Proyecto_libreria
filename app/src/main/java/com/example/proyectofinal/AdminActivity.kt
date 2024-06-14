@@ -33,4 +33,9 @@ class AdminActivity : AppCompatActivity() {
         val intent = Intent(this,Admin_list_Activity::class.java)
         startActivity(intent)
     }
+
+    fun btnsalir(view: View){
+        val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
+    }
 }
