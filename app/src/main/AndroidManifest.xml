@@ -16,6 +16,9 @@
             android:name=".Info_Libro_Activity"
             android:exported="false" />
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".Admin_list_Activity"
             android:exported="false" />
         <activity
