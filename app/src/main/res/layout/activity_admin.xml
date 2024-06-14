@@ -12,11 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="33dp"
         android:layout_marginEnd="124dp"
         android:text="@string/hola"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,11 +39,11 @@
         android:id="@+id/imgAgregar"
         android:layout_width="141dp"
         android:layout_height="134dp"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="135dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="31dp"
         android:onClick="btnagregar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgBorrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:srcCompat="@drawable/btn_agregar" />
@@ -51,13 +52,24 @@
         android:id="@+id/imgBorrar"
         android:layout_width="146dp"
         android:layout_height="126dp"
-        android:layout_marginStart="135dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="47dp"
         android:onClick="btnborrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/btn_borrar" />
+
+    <ImageButton
+        android:id="@+id/imgListaLibros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="130dp"
+        android:onClick="btnlista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgAgregar"
-        app:srcCompat="@drawable/btn_borrar" />
+        app:srcCompat="@drawable/lista" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,7 @@
     <string name="ambos">Ambos </string>
     <string name="guardar">Guardar </string>
     <string name="regresar">Regresar </string>
+    <string name="listaTitulo">Lista de libros </string>
 
     <string name="tituloBorrar">¿Que libro deseas borrar? </string>
     <string name="eliminar">Eliminar</string>
