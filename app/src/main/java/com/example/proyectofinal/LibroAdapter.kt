@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class LibroAdapter (private val libros: List<Libro>) : RecyclerView.Adapter<LibroAdapter.LibroViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LibroViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_libro, parent, false)
-        return LibroViewHolder(view)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_layout, parent, false)
+        return LibroViewHolder(itemView)
     }
+
     override fun onBindViewHolder(holder: LibroViewHolder, position: Int) {
         val libro = libros[position]
         holder.bind(libro)

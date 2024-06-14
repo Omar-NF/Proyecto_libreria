@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    card_view:cardBackgroundColor="#00f7ff"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="6dp"
+    card_view:contentPadding="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/nombreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Nombre del Libro"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="Nombre del Libro" />
+
+        <TextView
+            android:id="@+id/generoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nombreTextView"
+            android:layout_marginTop="8dp"
+            android:text="Género"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            tools:text="Género" />
+
+        <TextView
+            android:id="@+id/precioTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/generoTextView"
+            android:layout_marginTop="8dp"
+            android:text="Precio"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            tools:text="Precio" />
+
+        <TextView
+            android:id="@+id/disponibilidadTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/precioTextView"
+            android:layout_marginTop="8dp"
+            android:text="Disponibilidad"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            tools:text="Disponibilidad" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

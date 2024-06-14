@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Definir colores personalizados si no los tienes -->
+    <color name="colorNombreLibro">#FF3300</color>
+    <color name="colorGeneroLibro">#FF7700</color>
+    <color name="colorPrecioLibro">#000000</color>
+    <color name="colorDisponibilidadLibro">#000000</color>
+
+    <!-- Estilo para el nombre del libro -->
+    <style name="NombreLibroStyle">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorNombreLibro</item>
+    </style>
+
+    <!-- Estilo para el género del libro -->
+    <style name="GeneroLibroStyle">
+        <item name="android:textColor">@color/colorGeneroLibro</item>
+    </style>
+
+    <!-- Estilo para el precio del libro -->
+    <style name="PrecioLibroStyle">
+        <item name="android:textColor">@color/colorPrecioLibro</item>
+    </style>
+
+    <!-- Estilo para la disponibilidad del libro -->
+    <style name="DisponibilidadLibroStyle">
+        <item name="android:textColor">@color/colorDisponibilidadLibro</item>
+    </style>
+</resources>
