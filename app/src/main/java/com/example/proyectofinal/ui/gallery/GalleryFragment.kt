@@ -1,15 +1,19 @@
 package com.example.proyectofinal.ui.gallery
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyectofinal.Info_Libro_Activity
+import com.example.proyectofinal.Info_Libro_Fragment
 import com.example.proyectofinal.Libro
 import com.example.proyectofinal.LibroAdapter
 import com.example.proyectofinal.R
@@ -57,7 +61,15 @@ class GalleryFragment : Fragment() {
             mutableListOf()
         }
 
-        val adapter = LibroAdapter(libros)
+        // Configurar el adaptador con un listener para el botón
+        val adapter = LibroAdapter(libros) { libro ->
+            // Aquí manejas el clic del botón
+            Toast.makeText(requireContext(), "Ver más de: ${libro.nombre}", Toast.LENGTH_SHORT).show()
+            // Puedes iniciar una nueva actividad o fragmento aquí
+            val intent = Intent(requireContext(), Info_Libro_Activity::class.java)
+            intent.putExtra("libro", gson.toJson(libro))
+            startActivity(intent)
+        }
         listaDeLibros.adapter = adapter
     }
 
