@@ -1,5 +1,6 @@
 package com.example.proyectofinal
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,8 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class Admin_Agregar_Activity : AppCompatActivity() {
     private lateinit var nombreLibros : EditText
@@ -24,6 +27,8 @@ class Admin_Agregar_Activity : AppCompatActivity() {
     private lateinit var guardar : Button
     private lateinit var borrar : Button
     private var opcionSel = "1"
+    private val sharedPrefsFile = "LibraryPrefs"
+    private val gson = Gson()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_agregar)
@@ -71,11 +76,33 @@ class Admin_Agregar_Activity : AppCompatActivity() {
             if (venta.isChecked) { disponibilidad = "Venta" }
             if (ambos.isChecked) { disponibilidad = "Ambos" }
 
+            val libro = Libro(nombre, genero, precio, disponibilidad)
+            guardarShared(libro)
+
             limpiar()
         }else{
             Toast.makeText(this,"Llena todos los campos", Toast.LENGTH_LONG).show()
         }
     }//fun guardar
+
+    fun guardarShared(libro: Libro){
+        val sharedPreferences = getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        // Recuperar la lista actual de libros
+        val json = sharedPreferences.getString("libros",null)
+        val type = object : TypeToken<MutableList<Libro>>() {}.type
+        val libros : MutableList<Libro> = if (json != null){
+            gson.fromJson(json, type)
+        }else{
+            mutableListOf()
+        }
+        //Agregar un nuevo libro
+        libros.add(libro)
+        //Guardar la lista actualizada de libros
+        val jsonString = gson.toJson(libros)
+        editor.putString("libros",jsonString)
+        editor.apply()
+    }
 
     private fun limpiar() {
         nombreLibros.text = null
