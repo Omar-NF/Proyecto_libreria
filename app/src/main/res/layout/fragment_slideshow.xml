@@ -9,72 +9,71 @@
     <TextView
         android:id="@+id/textView8"
         style="@style/CustomTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="340dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="18dp"
         android:text="@string/tituloLLenar"
+        android:textAlignment="center"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="37dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/edtNomLibroBuscar"
         style="@style/CustomEditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="67dp"
         android:ems="10"
         android:hint="@string/nomLibro"
         android:inputType="text"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="128dp" />
-
-    <EditText
-        android:id="@+id/editTextNumber2"
-        style="@style/CustomEditTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/prestLibro"
-        android:inputType="number"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="195dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/swVenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="70dp"
         android:text="@string/venta"
         android:textSize="22sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="309dp" />
+        app:layout_constraintEnd_toStartOf="@+id/swRenta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomLibroBuscar" />
 
     <Switch
-        android:id="@+id/switch2"
+        android:id="@+id/swRenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="67dp"
         android:text="@string/renta"
         android:textSize="22sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="228dp"
-        tools:layout_editor_absoluteY="309dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomLibroBuscar" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnNuscar"
         style="@style/CustomButtonStyle"
         android:layout_width="178dp"
         android:layout_height="52dp"
-        android:text="@string/sig"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="403dp" />
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="117dp"
+        android:text="@string/bus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swVenta" />
 
-    <Button
-        android:id="@+id/button2"
-        style="@style/CustomButtonStyle"
-        android:layout_width="174dp"
-        android:layout_height="54dp"
-        android:text="@string/regresar"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="474dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

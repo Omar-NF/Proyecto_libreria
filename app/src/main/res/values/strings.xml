@@ -47,8 +47,9 @@
     <string name="descripcion">Bienvenido!!! Busca un libro desde nuestra aplicacion
         y ven a nuestra libreria a disfruta de tu libro favorito. </string>
 
-    <string name="tituloLLenar">Llena el siguiente formulario</string>
+    <string name="tituloLLenar">Busca alguno de nuestros libros</string>
     <string name="sig">Siguiente</string>
+    <string name="bus">Buscar</string>
     <string name="comp">Comprar</string>
 
     <string name="tiuloInfoLib">Detalles del libro</string>
