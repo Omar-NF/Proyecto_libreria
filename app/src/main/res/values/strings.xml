@@ -55,7 +55,8 @@
     <string name="comp">Comprar</string>
 
     <string name="tiuloInfoLib">Detalles del libro</string>
-    <string name="tiuloInfoComp">Detalles de la compra o renta</string>
+    <string name="tiuloInfoComp">Detalles de la renta</string>
+    <string name="devolucion">Fecha de devolucion</string>
     <string name="tiuloRec">Lee alguno de nuestros libros</string>
 
     <string name="menu_home">Inicio</string>

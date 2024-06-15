@@ -22,40 +22,54 @@
         style="@style/CustomEditTextStyle"
         android:layout_width="202dp"
         android:layout_height="57dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="105dp"
         android:ems="10"
         android:hint="@string/nomLibro"
         android:inputType="text"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="113dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <Switch
         android:id="@+id/swVenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="38dp"
         android:text="@string/venta"
         android:textSize="22sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintEnd_toStartOf="@+id/swRenta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomLibroBuscar" />
 
     <Switch
         android:id="@+id/swRenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="78dp"
         android:text="@string/renta"
         android:textSize="22sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="209dp"
-        tools:layout_editor_absoluteY="431dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNomLibroBuscar" />
 
     <Button
         android:id="@+id/btnNuscar"
         style="@style/CustomButtonStyle"
         android:layout_width="144dp"
         android:layout_height="52dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="134dp"
         android:text="@string/bus"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="113dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swVenta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
