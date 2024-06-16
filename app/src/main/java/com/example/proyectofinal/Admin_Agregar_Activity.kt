@@ -63,9 +63,10 @@ class Admin_Agregar_Activity : AppCompatActivity() {
     fun guardarLibro(view: View) {
         if (nombreLibros.text.isNotBlank() && precio_Libros.text.isNotBlank() && descripcion_Libros.text.isNotBlank()) {
             val nombre = nombreLibros.text.toString()
-            val genero = opcionSel
+            val genero = opcionSel  // Ya es texto legible
             val precio = precio_Libros.text.toString().toInt()
-            val descripcion = descripcion_Libros.text.toString() // Nuevo campo
+            val descripcion = descripcion_Libros.text.toString()
+
             var disponibilidad = ""
             if (renta.isChecked) disponibilidad = "Renta"
             if (venta.isChecked) disponibilidad = "Venta"
@@ -82,10 +83,10 @@ class Admin_Agregar_Activity : AppCompatActivity() {
 
             val libroExistente = libros.find { it.nombre == nombre }
             if (libroExistente != null) {
-                libroExistente.genero = genero
+                libroExistente.genero = genero  // Actualizar género si ya existe el libro
                 libroExistente.precio = precio
                 libroExistente.disponibilidad = disponibilidad
-                libroExistente.descripcion = descripcion // Nuevo campo
+                libroExistente.descripcion = descripcion
             } else {
                 val libro = Libro(UUID.randomUUID().toString(), nombre, genero, precio, disponibilidad, descripcion)
                 libros.add(libro)
