@@ -1,13 +1,14 @@
 package com.example.proyectofinal
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 
 class LibroAdapter(private val libros: List<Libro>, private val onVerMasClick: (Libro) -> Unit) :
     RecyclerView.Adapter<LibroAdapter.LibroViewHolder>() {
@@ -21,9 +22,17 @@ class LibroAdapter(private val libros: List<Libro>, private val onVerMasClick: (
         val libro = libros[position]
         holder.bind(libro)
 
-        // Configurar el listener del botón
         holder.verMasButton.setOnClickListener {
-            onVerMasClick(libro)
+            val context = holder.itemView.context
+            val sharedPrefs = context.getSharedPreferences("LibraryPrefs", Context.MODE_PRIVATE)
+            val editor = sharedPrefs.edit()
+            val gson = Gson()
+            val libroJson = gson.toJson(libro)
+            editor.putString("selectedLibro", libroJson)
+            editor.apply()
+
+            val intent = Intent(context, LibroDetallesActivity::class.java)
+            context.startActivity(intent)
         }
     }
 
