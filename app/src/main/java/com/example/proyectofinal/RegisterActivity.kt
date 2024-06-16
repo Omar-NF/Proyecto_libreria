@@ -1,51 +1,45 @@
 package com.example.proyectofinal
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 
-class RegisterActivity : AppCompatActivity() {
-    private lateinit var usuario: EditText
-    private lateinit var contraseña: EditText
-    private lateinit var registrar: Button
-    private lateinit var volver: Button
-    private lateinit var sharedPreferences: SharedPreferences
+class LibroDetallesActivity : AppCompatActivity() {
+    private lateinit var nombreTextView: TextView
+    private lateinit var generoTextView: TextView
+    private lateinit var precioTextView: TextView
+    private lateinit var disponibilidadTextView: TextView
+    private lateinit var descripcionTextView: TextView
+
+    private val sharedPrefsFile = "LibraryPrefs"
+    private val gson = Gson()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_libro_detalles)
 
-        usuario = findViewById(R.id.edtUsuario)
-        contraseña = findViewById(R.id.edtPass)
-        registrar = findViewById(R.id.btnRegistrar)
-        volver = findViewById(R.id.btnVolver)
+        nombreTextView = findViewById(R.id.nombreTextView)
+        generoTextView = findViewById(R.id.generoTextView)
+        precioTextView = findViewById(R.id.precioTextView)
+        disponibilidadTextView = findViewById(R.id.disponibilidadTextView)
+        descripcionTextView = findViewById(R.id.descripcionTextView)
 
-        sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        mostrarDetallesLibro()
     }
 
-    fun btnRegistrar(v: View) {
-        val usser = usuario.text.toString()
-        val pass = contraseña.text.toString()
+    private fun mostrarDetallesLibro() {
+        val sharedPreferences = getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
+        val libroJson = sharedPreferences.getString("selectedLibro", null)
 
-        if (usser.isNotBlank() && pass.isNotBlank()) {
-            val editor = sharedPreferences.edit()
-            if (!sharedPreferences.contains(usser)) {
-                editor.putString(usser, pass)
-                editor.apply()
-                Toast.makeText(this, "Usuario registrado exitosamente", Toast.LENGTH_SHORT).show()
-                finish()
-            } else {
-                Toast.makeText(this, "El usuario ya existe", Toast.LENGTH_SHORT).show()
-            }
+        if (libroJson != null) {
+            val libro = gson.fromJson(libroJson, Libro::class.java)
+            nombreTextView.text = libro.nombre
+            generoTextView.text = libro.genero
+            precioTextView.text = libro.precio.toString()
+            disponibilidadTextView.text = libro.disponibilidad
+            descripcionTextView.text = libro.descripcion
         }
-    }
-
-    fun btnVolver(v: View) {
-        finish() // Finaliza la actividad actual y vuelve a la actividad anterior en la pila
     }
 }
