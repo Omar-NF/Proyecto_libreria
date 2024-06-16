@@ -63,6 +63,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
 
+
+
     <EditText
         android:id="@+id/edtPrecio"
         style="@style/CustomEditTextStyle"
@@ -78,6 +80,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spSpinner" />
+
+    <EditText
+        android:id="@+id/edtDescripcion"
+        style="@style/CustomEditTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="67dp"
+        android:ems="10"
+        android:hint="Descripcion"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPrecio" />
 
     <RadioGroup
         android:id="@+id/rdGrupo"
