@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.proyectofinal.InfoLibroActivity
 import com.example.proyectofinal.Info_Libro_Activity
 import com.example.proyectofinal.Libro
 import com.example.proyectofinal.LibroAdapter

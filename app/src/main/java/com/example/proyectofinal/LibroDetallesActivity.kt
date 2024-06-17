@@ -1,18 +1,23 @@
 package com.example.proyectofinal
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 
 class LibroDetallesActivity : AppCompatActivity() {
-    private lateinit var nombreTextView: TextView
-    private lateinit var generoTextView: TextView
-    private lateinit var precioTextView: TextView
-    private lateinit var disponibilidadTextView: TextView
-    private lateinit var descripcionTextView: TextView
-
+    private lateinit var descripcion : TextView
+    private lateinit var presio : TextView
+    private lateinit var siguiente : Button
+    private lateinit var regrsar : Button
+    private lateinit var renta : Switch
+    private lateinit var venta : Switch
     private val sharedPrefsFile = "LibraryPrefs"
     private val gson = Gson()
 
@@ -20,12 +25,14 @@ class LibroDetallesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_libro_detalles)
 
-        nombreTextView = findViewById(R.id.nombreTextView)
-        generoTextView = findViewById(R.id.generoTextView)
-        precioTextView = findViewById(R.id.precioTextView)
-        disponibilidadTextView = findViewById(R.id.disponibilidadTextView)
-        descripcionTextView = findViewById(R.id.descripcionTextView)
+        descripcion = findViewById(R.id.txtDetalles)
+        presio = findViewById(R.id.edtPresioCompra)
+        regrsar = findViewById(R.id.btnRegresarInicio)
+        renta = findViewById(R.id.swRentaLib)
+        venta = findViewById(R.id.swVentaLib)
+        siguiente = findViewById(R.id.btnSiguiente)
 
+        //----------------------- Mostrar Info ---------------------------
         mostrarDetallesLibro()
     }
 
@@ -35,11 +42,20 @@ class LibroDetallesActivity : AppCompatActivity() {
 
         if (libroJson != null) {
             val libro = gson.fromJson(libroJson, Libro::class.java)
-            nombreTextView.text = libro.nombre
-            generoTextView.text = libro.genero
-            precioTextView.text = libro.precio.toString()
-            disponibilidadTextView.text = libro.disponibilidad
-            descripcionTextView.text = libro.descripcion
+
+            var informacion = "${libro.descripcion}"
+            var presioLib = "${libro.precio}"
+
+            descripcion.setText(informacion)
+            presio.setText(presioLib)
+        }
+    }
+
+    fun btnSiguiente(){
+        if (renta.isChecked && venta.isChecked){
+            Toast.makeText(this,"Selecciona venta o renta",Toast.LENGTH_SHORT).show()
+        }else if (renta.isChecked){
+            //val intent = Intent(this, )
         }
     }
 }

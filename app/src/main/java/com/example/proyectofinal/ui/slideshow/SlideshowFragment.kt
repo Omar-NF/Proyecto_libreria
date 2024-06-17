@@ -12,7 +12,7 @@ import android.widget.Switch
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.proyectofinal.InfoLibroActivity
+import com.example.proyectofinal.Info_Libro_Activity
 import com.example.proyectofinal.Libro
 import com.example.proyectofinal.R
 import com.example.proyectofinal.VentaActivity
@@ -70,7 +70,7 @@ class SlideshowFragment : Fragment() {
                     startActivity(intent)
                 } else if (renta.isChecked) {
                     // Redirigir a la actividad de renta
-                    val intent = Intent(requireContext(), InfoLibroActivity::class.java)
+                    val intent = Intent(requireContext(), Info_Libro_Activity::class.java)
                     intent.putExtra("libro", gson.toJson(libro))
                     startActivity(intent)
                 } else {
