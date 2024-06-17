@@ -21,17 +21,15 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class SlideshowFragment : Fragment() {
-    private lateinit var nombreLibroBuscar : EditText
-    private lateinit var venta : Switch
-    private lateinit var renta : Switch
-    private lateinit var buscar : Button
+
+    private lateinit var nombreLibroBuscar: EditText
+    private lateinit var venta: Switch
+    private lateinit var renta: Switch
+    private lateinit var buscar: Button
     private val sharedPrefsFile = "LibraryPrefs"
     private val gson = Gson()
 
     private var _binding: FragmentSlideshowBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -39,9 +37,6 @@ class SlideshowFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
-
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -50,25 +45,21 @@ class SlideshowFragment : Fragment() {
         renta = root.findViewById(R.id.swRenta)
         buscar = root.findViewById(R.id.btnNuscar)
 
-        buscar.setOnClickListener{
-            btnBuscar ()
-        }//onClickListener
+        buscar.setOnClickListener {
+            btnBuscar()
+        }
 
         return root
     }
 
-    fun btnBuscar (){
+    private fun btnBuscar() {
         val nombre = nombreLibroBuscar.text.toString()
 
         if (nombre.isNotBlank()) {
             val sharedPreferences = requireContext().getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
             val json = sharedPreferences.getString("libros", null)
             val type = object : TypeToken<MutableList<Libro>>() {}.type
-            val libros: MutableList<Libro> = if (json != null) {
-                gson.fromJson(json, type)
-            } else {
-                mutableListOf()
-            }
+            val libros: MutableList<Libro> = gson.fromJson(json, type) ?: mutableListOf()
 
             val libro = libros.find { it.nombre == nombre }
             if (libro != null) {
@@ -92,37 +83,6 @@ class SlideshowFragment : Fragment() {
             Toast.makeText(requireContext(), "Ingrese el nombre del libro", Toast.LENGTH_LONG).show()
         }
     }
-
-    fun obtenerDatos(){
-        val nombre = nombreLibroBuscar.text.toString()
-
-        if (nombre.isNotBlank()) {
-            val sharedPreferences =
-                requireContext().getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
-            val json = sharedPreferences.getString("libros", null)
-            val type = object : TypeToken<MutableList<Libro>>() {}.type
-            val libros: MutableList<Libro> = if (json != null) {
-                gson.fromJson(json, type)
-            } else {
-                mutableListOf()
-            }
-
-            val libro = libros.find { it.nombre == nombre }
-            if (libro != null){//si se encontro el libro
-                val libro_nom = libro.nombre
-                val libro_gen = libro.genero
-                val libro_pre = libro.precio
-                val libro_dis = libro.disponibilidad
-            }
-        }
-    }//obtenerDatos
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-}
-    }//obtenerDatos
 
     override fun onDestroyView() {
         super.onDestroyView()
