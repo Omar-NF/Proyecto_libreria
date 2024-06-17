@@ -1,88 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Info_Libro_Activity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView10"
-        style="@style/CustomTextStyle"
-        android:layout_width="275dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="68dp"
-        android:text="@string/libInfo"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/btnRegresarInicio"
-        style="@style/CustomButtonStyle"
+        android:id="@+id/btnRentar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="27dp"
-        android:text="@string/regresar"
-        app:layout_constraintEnd_toStartOf="@+id/btnComprarLib"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        android:text="Rentar Libro"
+        android:layout_below="@id/calendarView"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerHorizontal="true"/>
 
-    <Button
-        android:id="@+id/btnComprarLib"
-        style="@style/CustomButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="68dp"
-        android:text="@string/comp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPresioCompra" />
-
-    <EditText
-        android:id="@+id/cajaLibro"
-        style="@style/CustomButtonStyle"
-        android:layout_width="253dp"
-        android:layout_height="267dp"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="79dp"
-        android:background="@drawable/edittext_background"
-        android:ems="10"
-        android:hint="@string/libInfo"
-        android:inputType="text"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <TextView
-        android:id="@+id/textView14"
-        style="@style/CustomTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="36dp"
-        android:text="@string/prestLibro"
-        app:layout_constraintEnd_toStartOf="@+id/edtPresioCompra"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cajaLibro" />
-
-    <TextView
-        android:id="@+id/edtPresioCompra"
-        style="@style/CustomEditTextStyle"
-        android:layout_width="127dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="75dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cajaLibro" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

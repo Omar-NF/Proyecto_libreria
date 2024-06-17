@@ -36,6 +36,7 @@ class VentaActivity : AppCompatActivity() {
             val libro = gson.fromJson(libroJson, Libro::class.java)
             nombre.text = libro.nombre
             operacion.text = libro.disponibilidad
+            correo.text = libro.genero
             precio.text = libro.precio.toString()
 
             libroNom = libro.nombre
@@ -51,7 +52,7 @@ class VentaActivity : AppCompatActivity() {
     }
 
     fun btnSalir(v : View){
-        val intent = Intent(this, HomeFragment::class.java)
+        val intent = Intent(this, MenuActivity::class.java)
         startActivity(intent)
     }
 }

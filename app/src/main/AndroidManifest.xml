@@ -19,7 +19,7 @@
             android:name=".VentaActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoLibroActivity"
+            android:name=".Info_Libro_Activity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"

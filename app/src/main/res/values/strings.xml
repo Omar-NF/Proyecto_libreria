@@ -54,7 +54,7 @@
     <string name="sig">Siguiente</string>
     <string name="bus">Buscar</string>
     <string name="comp">Comprar</string>
-    <string name="correo">Correo</string>
+    <string name="correo">Genero</string>
     <string name="tipo">Tipo de operacion</string>
 
     <string name="tiuloInfoLib">Detalles del libro</string>
