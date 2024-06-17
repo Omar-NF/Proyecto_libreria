@@ -56,6 +56,7 @@
 
     <string name="tiuloInfoLib">Detalles del libro</string>
     <string name="tiuloInfoComp">Detalles de la renta</string>
+    <string name="libInfo">Detalles de el libro</string>
     <string name="devolucion">Fecha de devolucion</string>
     <string name="tiuloRec">Lee alguno de nuestros libros</string>
 

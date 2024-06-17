@@ -50,9 +50,11 @@ class Admin_Borrar_Activity : AppCompatActivity() {
                 editor.apply()
                 Toast.makeText(this, "Libro eliminado", Toast.LENGTH_SHORT).show()
                 libroBorrar.text = null
+            }else {
+                Toast.makeText(this, "Libro no encontrado", Toast.LENGTH_SHORT).show()
             }
         }else {
-            Toast.makeText(this, "Libro no encontrado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Llena todos los espacios", Toast.LENGTH_SHORT).show()
         }
     }//fun
 

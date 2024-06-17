@@ -11,62 +11,78 @@
         style="@style/CustomTextStyle"
         android:layout_width="275dp"
         android:layout_height="56dp"
-        android:layout_marginTop="31dp"
-        android:text="@string/tiuloInfoComp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="68dp"
+        android:text="@string/libInfo"
         android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnRegresarInicio"
         style="@style/CustomButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="27dp"
         android:text="@string/regresar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintEnd_toStartOf="@+id/btnComprarLib"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnComprarLib"
         style="@style/CustomButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="68dp"
         android:text="@string/comp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.852"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPresioCompra" />
+
+    <EditText
+        android:id="@+id/cajaLibro"
+        style="@style/CustomButtonStyle"
+        android:layout_width="253dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="79dp"
+        android:background="@drawable/edittext_background"
+        android:ems="10"
+        android:hint="@string/libInfo"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView14"
         style="@style/CustomTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/devolucion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193" />
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/prestLibro"
+        app:layout_constraintEnd_toStartOf="@+id/edtPresioCompra"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cajaLibro" />
 
-    <CalendarView
-        android:id="@+id/calenar"
-        android:layout_width="347dp"
-        android:layout_height="252dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+    <TextView
+        android:id="@+id/edtPresioCompra"
+        style="@style/CustomEditTextStyle"
+        android:layout_width="127dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cajaLibro" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

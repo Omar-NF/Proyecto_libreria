@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="67dp"
         android:ems="10"
         android:hint="@string/nomLibro"
@@ -36,13 +36,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
+
     <Spinner
         android:id="@+id/spSpinner"
         style="@style/CustomSpinnerStyle"
         android:layout_width="287dp"
         android:layout_height="52dp"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="62dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,9 +54,9 @@
         style="@style/CustomTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="119dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="165dp"
         android:text="@string/cantLibro"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -63,15 +64,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNombre" />
 
-
-
     <EditText
         android:id="@+id/edtPrecio"
         style="@style/CustomEditTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="67dp"
         android:ems="10"
         android:hint="@string/prestLibro"
@@ -87,24 +86,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="67dp"
         android:ems="10"
         android:hint="Descripcion"
         android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPrecio" />
+        app:layout_constraintTop_toBottomOf="@+id/rdGrupo" />
 
     <RadioGroup
         android:id="@+id/rdGrupo"
-        android:layout_width="368dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="369dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,35 +135,35 @@
         style="@style/CustomButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="37dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="40dp"
         android:onClick="guardarLibro"
         android:text="@string/guardar"
         app:layout_constraintEnd_toStartOf="@+id/btnBorrarLib"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rdGrupo" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDescripcion" />
 
     <Button
         android:id="@+id/btnBorrarLib"
         style="@style/CustomButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="46dp"
         android:onClick="regresarAdmin"
         android:text="@string/regresar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rdGrupo" />
+        app:layout_constraintTop_toBottomOf="@+id/edtDescripcion" />
 
     <Button
         android:id="@+id/btnEditar"
         style="@style/CustomButtonStyle"
         android:layout_width="159dp"
         android:layout_height="43dp"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="123dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="126dp"
         android:onClick="buscarLibro"
         android:text="@string/editar"
         app:layout_constraintEnd_toEndOf="parent"
