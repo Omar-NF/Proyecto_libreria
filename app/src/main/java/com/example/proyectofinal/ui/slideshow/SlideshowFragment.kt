@@ -6,15 +6,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.proyectofinal.Info_Libro_Activity
+import com.example.proyectofinal.InfoLibroActivity
 import com.example.proyectofinal.Libro
 import com.example.proyectofinal.R
 import com.example.proyectofinal.VentaActivity
@@ -81,7 +79,7 @@ class SlideshowFragment : Fragment() {
                     startActivity(intent)
                 } else if (renta.isChecked) {
                     // Redirigir a la actividad de renta
-                    val intent = Intent(requireContext(), Info_Libro_Activity::class.java)
+                    val intent = Intent(requireContext(), InfoLibroActivity::class.java)
                     intent.putExtra("libro", gson.toJson(libro))
                     startActivity(intent)
                 } else {
@@ -117,6 +115,13 @@ class SlideshowFragment : Fragment() {
                 val libro_dis = libro.disponibilidad
             }
         }
+    }//obtenerDatos
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
     }//obtenerDatos
 
     override fun onDestroyView() {
