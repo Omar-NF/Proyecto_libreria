@@ -11,13 +11,11 @@
         android:id="@+id/tituloTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Detalles del Libro"
+        android:text="@string/tiuloInfoLib"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        tools:layout_editor_absoluteX="230dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <!-- Book details in the center -->
     <TextView
