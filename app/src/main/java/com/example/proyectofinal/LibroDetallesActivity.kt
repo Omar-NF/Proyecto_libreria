@@ -3,12 +3,14 @@ package com.example.proyectofinal
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.proyectofinal.ui.home.HomeFragment
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -52,7 +54,7 @@ class LibroDetallesActivity : AppCompatActivity() {
         }
     }
 
-    fun btnSiguiente(){
+    fun btnSiguiente(v: View){
         val sharedPreferences = getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
         val libroJson = sharedPreferences.getString("selectedLibro", null)
 
@@ -74,5 +76,9 @@ class LibroDetallesActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+    fun btnAtras(v : View){
+        val intent = Intent(this, HomeFragment::class.java)
+        startActivity(intent)
     }
 }

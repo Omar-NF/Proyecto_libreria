@@ -1,11 +1,13 @@
 package com.example.proyectofinal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.proyectofinal.ui.home.HomeFragment
 import com.google.gson.Gson
 
 class VentaActivity : AppCompatActivity() {
@@ -50,6 +52,7 @@ class VentaActivity : AppCompatActivity() {
     }
 
     fun btnSalir(v : View){
-        Toast.makeText(this, "Gracias por tu comra!! \n tu libro $libroNom", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, HomeFragment::class.java)
+        startActivity(intent)
     }
 }

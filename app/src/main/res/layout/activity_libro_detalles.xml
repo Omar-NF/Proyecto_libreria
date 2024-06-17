@@ -30,6 +30,7 @@
         android:layout_marginStart="53dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="46dp"
+        android:onClick="btnAtras"
         android:text="@string/regresar"
         app:layout_constraintEnd_toStartOf="@+id/btnSiguiente"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="40dp"
+        android:onClick="btnSiguiente"
         android:text="@string/sig"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/swVentaLib" />
