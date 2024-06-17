@@ -34,10 +34,9 @@ class VentaActivity : AppCompatActivity() {
         val libroJson = intent.getStringExtra("libro")
         if (libroJson != null) {
             val libro = gson.fromJson(libroJson, Libro::class.java)
-            nombre.setText(libro.nombre)
-            operacion.setText(libro.disponibilidad)
-            //correo.setText(libro)
-            precio.setText(libro.precio)
+            nombre.text = libro.nombre
+            operacion.text = libro.disponibilidad
+            precio.text = libro.precio.toString()
 
             libroNom = libro.nombre
         }
@@ -45,10 +44,10 @@ class VentaActivity : AppCompatActivity() {
 
     fun btnComprar(v : View){
         Toast.makeText(this, "Gracias por tu comra!! \n tu libro $libroNom", Toast.LENGTH_SHORT).show()
-        nombre.setText("")
-        operacion.setText("")
-        correo.setText("")
-        precio.setText("")
+        nombre.text = ""
+        operacion.text = ""
+        correo.text = ""
+        precio.text = ""
     }
 
     fun btnSalir(v : View){
