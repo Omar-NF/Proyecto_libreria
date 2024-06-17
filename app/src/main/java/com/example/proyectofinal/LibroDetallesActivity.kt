@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class LibroDetallesActivity : AppCompatActivity() {
     private lateinit var descripcion : TextView
@@ -52,10 +53,19 @@ class LibroDetallesActivity : AppCompatActivity() {
     }
 
     fun btnSiguiente(){
-        if (renta.isChecked && venta.isChecked){
-            Toast.makeText(this,"Selecciona venta o renta",Toast.LENGTH_SHORT).show()
-        }else if (renta.isChecked){
-            //val intent = Intent(this, )
+        val sharedPreferences = getSharedPreferences(sharedPrefsFile, Context.MODE_PRIVATE)
+        val libroJson = sharedPreferences.getString("selectedLibro", null)
+
+        if (libroJson != null) {
+            val libro = gson.fromJson(libroJson, Libro::class.java)
+
+            if (renta.isChecked && venta.isChecked) {
+                Toast.makeText(this, "Selecciona venta o renta", Toast.LENGTH_SHORT).show()
+            } else if (venta.isChecked) {
+                val intent = Intent(this, VentaActivity::class.java)
+                intent.putExtra("libro", gson.toJson(libro))
+                startActivity(intent)
+            }
         }
     }
 }
