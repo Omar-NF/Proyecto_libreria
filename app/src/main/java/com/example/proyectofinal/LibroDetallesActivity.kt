@@ -64,6 +64,9 @@ class LibroDetallesActivity : AppCompatActivity() {
             } else if (venta.isChecked) {
                 val intent = Intent(this, VentaActivity::class.java)
                 intent.putExtra("libro", gson.toJson(libro))
+                intent.putExtra("libro", gson.toJson(libro))
+                intent.putExtra("libro", gson.toJson(libro))
+                intent.putExtra("libro", gson.toJson(libro))
                 startActivity(intent)
             }else if (renta.isChecked) {
                 val intent = Intent(this, Info_Libro_Activity::class.java)
