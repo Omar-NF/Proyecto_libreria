@@ -41,21 +41,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="39dp"
         android:text="@string/prestLibro"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toStartOf="@+id/edtPresioCompra"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="395dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDetalles" />
 
     <TextView
         android:id="@+id/edtPresioCompra"
         style="@style/CustomEditTextStyle"
         android:layout_width="127dp"
         android:layout_height="50dp"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="399dp" />
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetalles" />
 
     <TextView
         android:id="@+id/txtDetalles"
@@ -75,22 +78,26 @@
         android:layout_width="143dp"
         android:layout_height="49dp"
         android:layout_marginStart="53dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="41dp"
         android:text="@string/renta"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/swVentaLib"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <Switch
         android:id="@+id/swVentaLib"
         android:layout_width="122dp"
         android:layout_height="49dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="52dp"
         android:text="@string/venta"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="470dp" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPresioCompra" />
 
     <Button
         android:id="@+id/btnSiguiente"

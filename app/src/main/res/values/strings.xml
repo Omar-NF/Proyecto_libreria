@@ -50,9 +50,12 @@
         y ven a nuestra libreria a disfruta de tu libro favorito. </string>
 
     <string name="tituloLLenar">¿Que libro quieres rentar?</string>
+    <string name="tituloComprar">Confirma la compra</string>
     <string name="sig">Siguiente</string>
     <string name="bus">Buscar</string>
     <string name="comp">Comprar</string>
+    <string name="correo">Correo</string>
+    <string name="tipo">Tipo de operacion</string>
 
     <string name="tiuloInfoLib">Detalles del libro</string>
     <string name="tiuloInfoComp">Detalles de la renta</string>
