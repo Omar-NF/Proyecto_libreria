@@ -78,7 +78,7 @@ class LibroDetallesActivity : AppCompatActivity() {
         }
     }
     fun btnAtras(v : View){
-        val intent = Intent(this, HomeFragment::class.java)
+        val intent = Intent(this,HomeFragment::class.java)
         startActivity(intent)
     }
 }
