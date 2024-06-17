@@ -51,7 +51,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0997103b-df92-4f00-b49d-c731ea50f366" name="Changes" comment="ActivityVenta" />
+    <list default="true" id="0997103b-df92-4f00-b49d-c731ea50f366" name="Changes" comment="ActivityVenta">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/proyectofinal/LibroDetallesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/proyectofinal/LibroDetallesActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/proyectofinal/VentaActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/proyectofinal/VentaActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_libro_detalles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_libro_detalles.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718593866905</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ActivityVenta">
+      <option name="closed" value="true" />
+      <created>1718594908596</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718594908596</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
